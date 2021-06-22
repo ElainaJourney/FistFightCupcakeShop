@@ -1,0 +1,53 @@
+{
+    "blanks": [
+        "${noun} in the library",
+        "${noun} in the forest",
+        "${noun} in the attic",
+        "${noun} in the fog",
+        "${noun} in the water",
+        "${anthro} as a princess",
+        "${anthro} as a prince",
+        "${anthro} as a nonbinary heir to the throne",
+        "Inside ${inNoun}",
+        "${noun} inside ${inNoun}",
+        "${witch} witch"
+    ],
+    "westSigns": [
+        "Aries",
+        "Taurus",
+        "Gemini",
+        "Cancer",
+        "Leo",
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Pisces"
+    ],
+    "chineseSigns": [
+        "Rat",
+        "Ox",
+        "Tiger",
+        "Rabit",
+        "Dragon",
+        "Snake",
+        "Horse",
+        "Sheep",
+        "Monkey",
+        "Rooster",
+        "Dog",
+        "Pig"
+    ],
+    "people": [],
+    "places": [],
+    "things": [],
+    "ideas": [],
+    "activities": [],
+    "food": [],
+    "drinks": [],
+    "inNouns": [],
+    "verbs": [],
+    "adjectives": []
+}
