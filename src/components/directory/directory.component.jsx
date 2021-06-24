@@ -1,6 +1,10 @@
 import React from 'react';
 import MenuItem from '../menu-item/menu-item.component';
-import vlogImage from '../../assets/vlog.png'
+import vlogImage from '../../assets/images/vlog.png'
+import galleryImage from '../../assets/images/gallery.png'
+import aboutImage from '../../assets/images/about.png'
+import shopImage from '../../assets/images/store.png'
+import promptsImage from '../../assets/images/prompts.png'
 import './directory.styles.scss'
 
 class Directory extends React.Component {
@@ -17,26 +21,26 @@ class Directory extends React.Component {
                 },
                 {
                     title: 'gallery',
-                    imageUrl: 'https://picsum.photos/1706/1152',
+                    imageUrl: `${galleryImage}`,
                     id: 2,
                     linkUrl: 'gallery'
                 },
                 {
                     title: 'about',
-                    imageUrl: 'https://picsum.photos/1706/1152',
+                    imageUrl: `${aboutImage}`,
                     id: 3,
                     linkUrl: 'about'
                 },
                 {
                     title: 'shop',
-                    imageUrl: 'https://picsum.photos/2560/1152',
+                    imageUrl: `${shopImage}`,
                     size: 'large',
                     id: 4,
                     linkUrl: 'shop'
                 },
                 {
                     title: 'generator',
-                    imageUrl: 'https://picsum.photos/2560/1152',
+                    imageUrl: `${promptsImage}`,
                     size: 'large',
                     id: 5,
                     linkUrl: 'prompts'
