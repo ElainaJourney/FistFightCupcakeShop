@@ -5,6 +5,7 @@ import galleryImage from '../../assets/images/gallery.png'
 import aboutImage from '../../assets/images/about.png'
 import shopImage from '../../assets/images/store.png'
 import promptsImage from '../../assets/images/prompts.png'
+import commissionsImage from '../../assets/images/commissions.png'
 import './directory.styles.scss'
 
 class Directory extends React.Component {
@@ -23,7 +24,7 @@ class Directory extends React.Component {
                     title: 'gallery',
                     imageUrl: `${galleryImage}`,
                     id: 2,
-                    linkUrl: 'gallery'
+                    linkUrl: 'gallery' 
                 },
                 {
                     title: 'about',
@@ -44,6 +45,13 @@ class Directory extends React.Component {
                     size: 'large',
                     id: 5,
                     linkUrl: 'prompts'
+                },
+                {
+                    title: 'commissions',
+                    imageUrl: `${commissionsImage}`,
+                    size: 'full',
+                    id: 6,
+                    linkUrl: 'commissions'
                 }
             ]
         }

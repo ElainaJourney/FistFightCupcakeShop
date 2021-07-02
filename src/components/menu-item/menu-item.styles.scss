@@ -15,6 +15,9 @@
   &.large {
     height: 310px;
   }
+  &.full {
+    width: 100vw;
+  }
 
   &:first-child {
     margin-right: 7.5px;
