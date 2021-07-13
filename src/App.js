@@ -50,6 +50,7 @@ class App extends React.Component {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/shop" component={ShopPage} />
         <Route exact path="/signin" component={SigninAndSignupPage} />
+        <Route exact path="/prompts" component={ArtPrompts} />
       </div>
     );
   }

@@ -6,6 +6,8 @@ import aboutImage from '../../assets/images/about.png'
 import shopImage from '../../assets/images/store.png'
 import promptsImage from '../../assets/images/prompts.png'
 import commissionsImage from '../../assets/images/commissions.png'
+import repeatCupcake from '../../assets/images/repeatCupcake.png'
+import corner from '../../assets/images/corner.png'
 import './directory.styles.scss'
 
 class Directory extends React.Component {
@@ -16,39 +18,47 @@ class Directory extends React.Component {
             sections: [
                 {
                     title: 'vlog',
-                    imageUrl: `${vlogImage}`,
+                    imageUrl: `url(${vlogImage})`,
                     id: 1,
                     linkUrl: 'vlog'
                 },
                 {
                     title: 'gallery',
-                    imageUrl: `${galleryImage}`,
+                    imageUrl: `url(${galleryImage})`,
                     id: 2,
                     linkUrl: 'gallery' 
                 },
                 {
                     title: 'about',
-                    imageUrl: `${aboutImage}`,
+                    imageUrl: `url(${aboutImage})`,
                     id: 3,
                     linkUrl: 'about'
                 },
                 {
                     title: 'shop',
-                    imageUrl: `${shopImage}`,
+                    imageUrl: `url(${shopImage}) center no-repeat, 
+                        url(${corner}) left top, 
+                        url(${corner}) left bottom, 
+                        url(${corner}) right top, 
+                        url(${corner}) right bottom`,
                     size: 'large',
                     id: 4,
                     linkUrl: 'shop'
                 },
                 {
                     title: 'generator',
-                    imageUrl: `${promptsImage}`,
+                    imageUrl: `url(${promptsImage}) center no repeat, 
+                    url(${corner}) left top, 
+                    url(${corner}) left bottom, 
+                    url(${corner}) right top, 
+                    url(${corner}) right bottom`,
                     size: 'large',
                     id: 5,
                     linkUrl: 'prompts'
                 },
                 {
                     title: 'commissions',
-                    imageUrl: `${commissionsImage}`,
+                    imageUrl: `url(${commissionsImage}), url(${repeatCupcake})`,
                     size: 'full',
                     id: 6,
                     linkUrl: 'commissions'

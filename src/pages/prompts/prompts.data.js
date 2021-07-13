@@ -1,16 +1,18 @@
+import React from "react";
+import selectPOS from "../../components/select-pos/selectPOS.component";
 const PROMPT_DATA = {
   blanks: [
-    "${noun} in the library",
-    "${noun} in the forest",
-    "${noun} in the attic",
-    "${noun} in the fog",
-    "${noun} in the water",
-    "${anthro} as a princess",
-    "${anthro} as a prince",
-    "${anthro} as a nonbinary heir to the throne",
-    "Inside ${inNoun}",
-    "${noun} inside ${inNoun}",
-    "${witch} witch",
+    `${selectPOS("noun")} in the library`,
+    `${selectPOS("noun")} in the forest`,
+    `${selectPOS("noun")} in the attic`,
+    `${selectPOS("noun")} in the fog`,
+    `${selectPOS("noun")} in the water`,
+    `${selectPOS("anthro")} as a princess`,
+    `${selectPOS("anthro")} as a prince`,
+    `${selectPOS("anthro")} as a nonbinary heir to the throne`,
+    `Inside ${selectPOS("inNoun")}`,
+    `${selectPOS("noun")} inside ${selectPOS("inNoun")}`,
+    `${selectPOS("witch")} witch`,
   ],
   westSigns: [
     "Aries",
@@ -47,7 +49,10 @@ const PROMPT_DATA = {
   activities: [],
   food: [],
   drinks: [],
-  inNouns: [],
+  noun: ["house"], //needs function to select from noun types
+  anthro: ["rat"],
+  inNouns: ["box"],
+  witch: ["cute"],
   verbs: [],
   adjectives: [],
 };
