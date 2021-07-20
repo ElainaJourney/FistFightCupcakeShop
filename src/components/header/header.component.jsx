@@ -2,11 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { auth } from '../../firebase/firebase.utils'
+import BagDropdown from '../bag-components/bag-dropdown/bag-dropdown.component'
+import BagIcon from '../bag-components/bag-icon/bag-icon.component'
 import cupcake from "../../assets/images/cupcake.png"
 import hero from "../../assets/images/hero.png"
 import './header.styles.scss'
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, hidden }) => (
     <div className='header'>
         <Link className='logo-container' to='/'>
             <img className='logo' src={cupcake} alt='logo'/>
@@ -24,12 +26,15 @@ const Header = ({ currentUser }) => (
                 :
                 <Link className='option' to='signin'>sign in</Link>
             }
+            <BagIcon/>
         </div>
+        {hidden ? null : <BagDropdown/>}
     </div>
 )
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user: { currentUser }, bag: { hidden }}) => ({
+    currentUser,
+    hidden
 })
 
 export default connect(mapStateToProps)(Header)
