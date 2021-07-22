@@ -19,7 +19,7 @@ const SHOP_DATA = [
     routeName: "cafecats",
     items: [
       {
-        id: 1,
+        id: 2,
         name: "Sticker Sheet",
         imageUrl: "https://via.placeholder.com/265/350.png",
         price: 10,
@@ -32,7 +32,7 @@ const SHOP_DATA = [
     routeName: "coneappetit",
     items: [
       {
-        id: 1,
+        id: 3,
         name: "Sticker Sheet",
         imageUrl: "https://via.placeholder.com/265/350.png",
         price: 10,
@@ -45,7 +45,7 @@ const SHOP_DATA = [
     routeName: "Snail Globes",
     items: [
       {
-        id: 1,
+        id: 4,
         name: "Sticker Sheet",
         imageUrl: "https://via.placeholder.com/265/350.png",
         price: 10,
@@ -58,7 +58,7 @@ const SHOP_DATA = [
     routeName: "Tchatchkes",
     items: [
       {
-        id: 1,
+        id: 5,
         name: "Sticker Sheet",
         imageUrl: "https://via.placeholder.com/265/350.png",
         price: 10,
