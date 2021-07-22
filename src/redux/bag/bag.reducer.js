@@ -2,6 +2,7 @@ import BagActionTypes from "./bag.types";
 
 const INITIAL_STATE = {
   hidden: true,
+  bagItems: [],
 };
 
 const bagReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ const bagReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         hidden: !state.hidden,
+      };
+    case BagActionTypes.ADD_ITEM:
+      return {
+        ...state,
+        bagItems: [...state.bagItems, action.payload],
       };
     default:
       return state;
