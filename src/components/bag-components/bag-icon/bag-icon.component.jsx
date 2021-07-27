@@ -6,10 +6,10 @@ import { ReactComponent as ShoppingIcon } from '../../../assets/images/shoppingb
 
 import './bag-icon.styles.scss'
 
-const BagIcon = ({ toggleBagHidden }) => (
+const BagIcon = ({ toggleBagHidden, itemCount }) => (
     <div className='bag-icon' onClick={toggleBagHidden}>
         <ShoppingIcon className = 'shopping-icon' />
-        <span className='item-count'>0</span>
+        <span className='item-count'>{itemCount}</span>
     </div>
 )
 
@@ -17,4 +17,9 @@ const mapDispatchToProps = dispatch => ({
 
     toggleBagHidden: () => dispatch(toggleBagHidden())
 })
-export default connect(null, mapDispatchToProps)(BagIcon)
+
+const mapStateToProps = ({ bag: { bagItems } }) => ({
+    itemCount: bagItems.reduce((accumalatedQuantity, bagItem) => accumalatedQuantity + bagItem.quantity,
+     0)
+})
+export default connect(mapStateToProps, mapDispatchToProps)(BagIcon)
