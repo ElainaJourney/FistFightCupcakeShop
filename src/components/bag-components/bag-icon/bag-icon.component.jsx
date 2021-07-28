@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { toggleBagHidden } from '../../../redux/bag/bag.actions'
+import { selectBagItemsCount } from '../../../redux/bag/bag.selectors'
+
 import { ReactComponent as ShoppingIcon } from '../../../assets/images/shoppingbag.svg'
 
 import './bag-icon.styles.scss'
@@ -18,8 +20,7 @@ const mapDispatchToProps = dispatch => ({
     toggleBagHidden: () => dispatch(toggleBagHidden())
 })
 
-const mapStateToProps = ({ bag: { bagItems } }) => ({
-    itemCount: bagItems.reduce((accumalatedQuantity, bagItem) => accumalatedQuantity + bagItem.quantity,
-     0)
+const mapStateToProps = state => ({
+    itemCount: selectBagItemsCount(state)
 })
 export default connect(mapStateToProps, mapDispatchToProps)(BagIcon)

@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { selectBagItems } from '../../../redux/bag/bag.selectors'
+
 import CustomButton from '../../custom-button/custom-button.component'
 import BagItem from '../bag-item/bag-item.component'
 
@@ -15,8 +17,8 @@ const BagDropdown = ({ bagItems }) => (
     </div>
 )
 
-const mapStateToProps = ({ bag: { bagItems } }) => ({
-    bagItems
+const mapStateToProps = (state) => ({
+    bagItems: selectBagItems(state)
 })
 
 export default connect(mapStateToProps)(BagDropdown)
