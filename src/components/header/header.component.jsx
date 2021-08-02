@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 import { auth } from '../../firebase/firebase.utils'
+
 import BagDropdown from '../bag-components/bag-dropdown/bag-dropdown.component'
+import { selectBagHidden } from '../../redux/bag/bag.selectors'
+import { selectCurrentUser } from '../../redux/user/user.selectors'
+
 import BagIcon from '../bag-components/bag-icon/bag-icon.component'
 import cupcake from "../../assets/images/cupcake.png"
 import hero from "../../assets/images/hero.png"
+
 import './header.styles.scss'
 
 const Header = ({ currentUser, hidden }) => (
@@ -32,9 +38,9 @@ const Header = ({ currentUser, hidden }) => (
     </div>
 )
 
-const mapStateToProps = ({user: { currentUser }, bag: { hidden }}) => ({
-    currentUser,
-    hidden
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectBagHidden
 })
 
 export default connect(mapStateToProps)(Header)

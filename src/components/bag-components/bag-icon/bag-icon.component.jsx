@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 import { toggleBagHidden } from '../../../redux/bag/bag.actions'
 import { selectBagItemsCount } from '../../../redux/bag/bag.selectors'
@@ -20,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
     toggleBagHidden: () => dispatch(toggleBagHidden())
 })
 
-const mapStateToProps = state => ({
-    itemCount: selectBagItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+    itemCount: selectBagItemsCount
 })
 export default connect(mapStateToProps, mapDispatchToProps)(BagIcon)

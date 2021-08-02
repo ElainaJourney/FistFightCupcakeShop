@@ -7,6 +7,8 @@ export const selectBagItems = createSelector(
   (bag) => bag.bagItems
 );
 
+export const selectBagHidden = createSelector([selectBag], (bag) => bag.hidden);
+
 export const selectBagItemsCount = createSelector(
   [selectBagItems],
   (bagItems) =>

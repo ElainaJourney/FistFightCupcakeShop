@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 import { selectBagItems } from '../../../redux/bag/bag.selectors'
 
@@ -17,8 +18,8 @@ const BagDropdown = ({ bagItems }) => (
     </div>
 )
 
-const mapStateToProps = (state) => ({
-    bagItems: selectBagItems(state)
+const mapStateToProps = createStructuredSelector({
+    bagItems: selectBagItems
 })
 
 export default connect(mapStateToProps)(BagDropdown)
