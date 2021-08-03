@@ -1,5 +1,7 @@
 const BagActionTypes = {
   TOGGLE_BAG_HIDDEN: "TOGGLE_BAG_HIDDEN",
   ADD_ITEM: "ADD_ITEM",
+  CLEAR_ITEM_FROM_BAG: "CLEAR_ITEM_FROM_BAG",
+  REMOVE_ITEM: "REMOVE_ITEM",
 };
 export default BagActionTypes;
