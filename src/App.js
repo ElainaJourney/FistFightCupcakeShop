@@ -9,6 +9,7 @@ import HomePage from "./pages/homepage/homepage.component";
 import ArtPrompts from "./pages/prompts/prompts.component";
 import ShopPage from "./pages/shop/shop.component";
 import SigninAndSignupPage from "./pages/signin-and-signup/signin-and-signup.component";
+import Checkout from "./pages/checkout/checkout.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
@@ -57,6 +58,7 @@ class App extends React.Component {
           }
         />
         <Route exact path="/prompts" component={ArtPrompts} />
+        <Route exact path="/checkout" component={Checkout} />
       </div>
     );
   }

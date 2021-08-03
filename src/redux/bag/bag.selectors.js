@@ -1,4 +1,4 @@
-import { createSelector, crreateSelector } from "reselect";
+import { createSelector } from "reselect";
 
 const selectBag = (state) => state.bag;
 
@@ -16,4 +16,12 @@ export const selectBagItemsCount = createSelector(
       (accumalatedQuantity, bagItem) => accumalatedQuantity + bagItem.quantity,
       0
     )
+);
+
+export const selectBagTotal = createSelector([selectBagItems], (bagItems) =>
+  bagItems.reduce(
+    (accumalatedQuantity, bagItem) =>
+      accumalatedQuantity + bagItem.quantity * bagItem.price,
+    0
+  )
 );
