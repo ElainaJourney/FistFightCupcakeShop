@@ -42,7 +42,7 @@ const SHOP_DATA = [
   {
     id: 4,
     title: "Snail Globes",
-    routeName: "Snail Globes",
+    routeName: "snailglobes",
     items: [
       {
         id: 4,
@@ -55,7 +55,7 @@ const SHOP_DATA = [
   {
     id: 5,
     title: "Tchotchkes",
-    routeName: "Tchatchkes",
+    routeName: "tchotchkes",
     items: [
       {
         id: 5,
