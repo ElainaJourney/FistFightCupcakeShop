@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
 import CheckoutItem from '../../components/checkout-components/checkout-item/checkout-item.component'
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component'
 
 import { selectBagItems, selectBagTotal } from '../../redux/bag/bag.selectors'
 
@@ -29,6 +30,10 @@ const Checkout = ({ bagItems, total }) => (
         </div>
         {bagItems.map(bagItem => (<CheckoutItem key={bagItem.id} bagItem={bagItem} />))}
         <div className='total'><span>Total: ${total}</span></div>
+        <div className='test-warning'>
+            This is just a test: 4242 4242 4242 4242 - 1/22 - 123
+        </div>
+        <StripeCheckoutButton price={total} />
 </div>
 )
 const mapStateToProps = createStructuredSelector({
