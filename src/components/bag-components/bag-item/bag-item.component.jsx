@@ -1,16 +1,16 @@
 import React from 'react';
 
-import './bag-item.styles.scss'
+import { BagItemContainer, ItemImage, ItemDetailContainer, ItemNameContainer, ItemPriceContainer } from './bag-item.styles';
 
 
 const BagItem = ({ item: { imageUrl, price, name, quantity } }) => (
-    <div className='bag-item'>
-        <img src={imageUrl} alt='item' />
-        <div className='item-details'>
-            <span className='name'>{name}</span>
-            <span className='price'>{quantity} x ${price}</span>
-        </div>
-    </div>
+    <BagItemContainer>
+        <ItemImage src={imageUrl} alt='item' />
+        <ItemDetailContainer>
+            <ItemNameContainer>{name}</ ItemNameContainer>
+            <ItemPriceContainer>{quantity} x ${price}</ ItemPriceContainer>
+        </ ItemDetailContainer>
+    </ BagItemContainer>
 )
 
 export default BagItem

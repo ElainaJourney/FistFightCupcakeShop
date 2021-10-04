@@ -9,22 +9,22 @@ import { toggleBagHidden } from '../../../redux/bag/bag.actions'
 import CustomButton from '../../custom-button/custom-button.component'
 import BagItem from '../bag-item/bag-item.component'
 
-import './bag-dropdown.styles.scss'
+import { BagDropdownContainer, BagItemsContainer } from './bag-dropdown.styles'
 
 const BagDropdown = ({ bagItems, history, dispatch }) => (
-    <div className='bag-dropdown'>
-        <div className='bag-items'>
+    <BagDropdownContainer>
+        <BagItemsContainer>
             {
             bagItems.length ?
             bagItems.map(bagItem => <BagItem key={bagItem.id} item={bagItem}/>)
             : <span>There's nothing here!</span>
         }
-        </div>
+        </ BagItemsContainer>
         <CustomButton onClick={() => {
             history.push('/checkout');
             dispatch(toggleBagHidden())
             }}>Checkout</CustomButton>
-    </div>
+    </ BagDropdownContainer>
 )
 
 const mapStateToProps = createStructuredSelector({

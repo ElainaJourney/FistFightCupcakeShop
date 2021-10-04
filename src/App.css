@@ -122,13 +122,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 body {
-  padding: 20px 60px;
+  font-family: "Open Sans Condensed";
 }
+
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
+
 * {
   box-sizing: border-box;
 }

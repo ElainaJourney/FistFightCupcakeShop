@@ -6,35 +6,34 @@ import CheckoutItem from '../../components/checkout-components/checkout-item/che
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component'
 
 import { selectBagItems, selectBagTotal } from '../../redux/bag/bag.selectors'
-
-import './checkout.styles.scss'
+import { CheckoutContainer, CheckoutHeaderContainer, HeaderBlockContainer } from './checkout.styles'
 
 const Checkout = ({ bagItems, total }) => (
-    <div className='checkout'>
-        <div className='checkout-header'>
-            <div className='header-block'>
+    <CheckoutContainer>
+        <CheckoutHeaderContainer>
+            <HeaderBlockContainer>
                 <span>Product</span>
-            </div>
-            <div className='header-block'>
+            </ HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Description</span>
-            </div>
-            <div className='header-block'>
+            </ HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Quantity</span>
-            </div>
-            <div className='header-block'>
+            </ HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Price</span>
-            </div>
-            <div className='header-block'>
+            </ HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Delete</span>
-            </div>
-        </div>
+            </ HeaderBlockContainer>
+        </ CheckoutHeaderContainer>
         {bagItems.map(bagItem => (<CheckoutItem key={bagItem.id} bagItem={bagItem} />))}
         <div className='total'><span>Total: ${total}</span></div>
         <div className='test-warning'>
             This is just a test: 4242 4242 4242 4242 - 1/22 - 123
         </div>
         <StripeCheckoutButton price={total} />
-</div>
+    </ CheckoutContainer>
 )
 const mapStateToProps = createStructuredSelector({
     bagItems: selectBagItems,

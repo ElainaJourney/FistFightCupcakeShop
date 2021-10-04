@@ -5,15 +5,14 @@ import { createStructuredSelector } from 'reselect'
 import { toggleBagHidden } from '../../../redux/bag/bag.actions'
 import { selectBagItemsCount } from '../../../redux/bag/bag.selectors'
 
-import { ReactComponent as ShoppingIcon } from '../../../assets/images/shoppingbag.svg'
+import { BagIconContainer, ItemCountContainer, ShoppingIcon } from './bag-icon.styles'
 
-import './bag-icon.styles.scss'
 
 const BagIcon = ({ toggleBagHidden, itemCount }) => (
-    <div className='bag-icon' onClick={toggleBagHidden}>
-        <ShoppingIcon className = 'shopping-icon' />
-        <span className='item-count'>{itemCount}</span>
-    </div>
+    <BagIconContainer onClick={toggleBagHidden}>
+        <ShoppingIcon />
+        <ItemCountContainer>{itemCount}</ ItemCountContainer>
+    </ BagIconContainer>
 )
 
 const mapDispatchToProps = dispatch => ({

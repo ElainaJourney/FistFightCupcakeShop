@@ -5,7 +5,7 @@ import CustomButton from '../custom-button/custom-button.component'
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 
-import "./signup.styles.scss"
+import { SignupContainer, SignupTitle } from './signup.styles'
 
 class SignUp extends React.Component {
     constructor(){
@@ -51,13 +51,14 @@ class SignUp extends React.Component {
     render(){
         const { displayName, email, password, confirmPassword } = this.state
         return(
-            <div className='signup'>
-                <h2 className='title'>I don't have an account</h2>
+            <SignupContainer>
+                <SignupTitle>I don't have an account</ SignupTitle>
                 <span>Sign up with your email and password</span>
                 <form className='signup-form' onSubmit={this.handleSubmit}>
                     <FormInput
                         type='text'
                         name='displayName'
+                        placeholder='Display Name'
                         value={displayName}
                         onChange={this.handleChange}
                         label='Display Name'
@@ -65,6 +66,7 @@ class SignUp extends React.Component {
                     <FormInput
                         type='email'
                         name='email'
+                        placeholder='eMail'
                         value={email}
                         onChange={this.handleChange}
                         label='Email'
@@ -72,6 +74,7 @@ class SignUp extends React.Component {
                     <FormInput
                         type='password'
                         name='password'
+                        placeholder='Password'
                         value={password}
                         onChange={this.handleChange}
                         label='Password'
@@ -79,13 +82,14 @@ class SignUp extends React.Component {
                     <FormInput
                         type='password'
                         name='confirmPassword'
+                        placeholder='Confirm Password'
                         value={confirmPassword}
                         onChange={this.handleChange}
                         label='Confirm Password'
                         required/>
                     <CustomButton type='submit'>Sign Up</CustomButton>
                 </form>
-            </div>
+            </ SignupContainer>
         )
     }
 }

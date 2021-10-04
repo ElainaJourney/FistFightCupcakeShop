@@ -1,9 +1,9 @@
 import React from 'react'
-import './signin.styles.scss'
 
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils'
+import { ButtonsContainer, SigninContainer, SigninTitle } from './signin.styles'
 class Signin extends React.Component{
     constructor(props) {
         super(props)
@@ -33,14 +33,15 @@ class Signin extends React.Component{
 
     render(){
         return(
-            <div className='signin'>
-                <h2>I already have an account</h2>
+            <SigninContainer>
+                <SigninTitle>I already have an account</SigninTitle>
                 <span>Sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput 
                         name='email' 
                         type='email' 
+                        placeholder='eMail'
                         value={this.state.email} 
                         handleChange={this.handleChange} 
                         label='email'
@@ -49,17 +50,18 @@ class Signin extends React.Component{
                     <FormInput 
                         name="password" 
                         type='password' 
+                        placeholder='Password'
                         value={this.state.password}
                         handleChange={this.handleChange} 
                         label='password'
                         required 
                         />
-                    <div className='buttons'>
+                    <ButtonsContainer>
                         <CustomButton type='submit'> Sign In </CustomButton>
                         <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignin> Sign In With Google </CustomButton>
-                    </div>
+                    </ButtonsContainer>
                 </form>
-            </div>
+            </ SigninContainer>
         )
     }
 }
