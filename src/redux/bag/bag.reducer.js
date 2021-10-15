@@ -31,6 +31,11 @@ const bagReducer = (state = INITIAL_STATE, action) => {
         ...state,
         bagItems: removeItem(state.bagItems, action.payload),
       };
+    case BagActionTypes.CLEAR_BAG:
+      return {
+        ...state,
+        bagItems: [],
+      };
     default:
       return state;
   }
