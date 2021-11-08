@@ -1,48 +1,39 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { useState } from 'react'
 
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 
 import { googleSigninStart, emailSigninStart } from '../../redux/user/user.actions'
 import { ButtonsContainer, SigninContainer, SigninTitle } from './signin.styles'
-class Signin extends React.Component{
-    constructor(props) {
-        super(props)
+const Signin = ({ emailSigninStart, googleSigninStart }) => {
+    const [user, setUser] = useState({ email: '', password: '' })
 
-        this.state = {
-            email: '',
-            password: ''
-        }
-    }
-
-    handleSubmit = async event => {
+    const { email, password } = user
+    const handleSubmit = async event => {
         event.preventDefault()
-        const { emailSigninStart } = this.props
-        const { email, password } = this.state
 
         emailSigninStart(email, password)
     }
-    handleChange = event => {
+    const handleChange = event => {
         const{ value, name } = event.target
 
-        this.setState({ [name]: value })
+        setUser({ ...user, [name]: value })
     }
 
-    render(){
-        const { googleSigninStart } = this.props
         return(
             <SigninContainer>
                 <SigninTitle>I already have an account</SigninTitle>
                 <span>Sign in with your email and password</span>
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <FormInput 
                         name='email' 
                         type='email' 
                         placeholder='eMail'
-                        value={this.state.email} 
-                        handleChange={this.handleChange} 
+                        value={email} 
+                        handleChange={handleChange} 
                         label='email'
                         required 
                         />
@@ -50,8 +41,8 @@ class Signin extends React.Component{
                         name="password" 
                         type='password' 
                         placeholder='Password'
-                        value={this.state.password}
-                        handleChange={this.handleChange} 
+                        value={password}
+                        handleChange={handleChange} 
                         label='password'
                         required 
                         />
@@ -63,7 +54,6 @@ class Signin extends React.Component{
             </ SigninContainer>
         )
     }
-}
 
 const mapDispatchToProps = dispatch => ({
     googleSigninStart: () => dispatch(googleSigninStart()),
