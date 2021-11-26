@@ -1,26 +1,22 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
 import { toggleBagHidden } from '../../../redux/bag/bag.actions'
-import { selectBagItemsCount } from '../../../redux/bag/bag.selectors'
+import { selectBagItems, selectBagItemsCount } from '../../../redux/bag/bag.selectors'
 
 import { BagIconContainer, ItemCountContainer, ShoppingIcon } from './bag-icon.styles'
 
 
-const BagIcon = ({ toggleBagHidden, itemCount }) => (
-    <BagIconContainer onClick={toggleBagHidden}>
+const BagIcon = () => {
+    const dispatch = useDispatch()
+    const itemCount = useSelector(selectBagItemsCount)
+    const toggleBagHiddenHandler = () => dispatch(toggleBagHidden())
+    return (
+    <BagIconContainer onClick={toggleBagHiddenHandler}>
         <ShoppingIcon />
         <ItemCountContainer>{itemCount}</ ItemCountContainer>
     </ BagIconContainer>
-)
+)}
 
-const mapDispatchToProps = dispatch => ({
-
-    toggleBagHidden: () => dispatch(toggleBagHidden())
-})
-
-const mapStateToProps = createStructuredSelector({
-    itemCount: selectBagItemsCount
-})
-export default connect(mapStateToProps, mapDispatchToProps)(BagIcon)
+export default BagIcon

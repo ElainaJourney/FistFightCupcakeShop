@@ -9,9 +9,9 @@ import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 import { signupStart } from '../../redux/user/user.actions'
 
 import { SignupContainer, SignupTitle } from './signup.styles'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-const SignUp = ({ signupStart }) => {
+const SignUp = () => {
     const [user, setUser] = useState({
         displayName: '',
         email: '',
@@ -20,6 +20,10 @@ const SignUp = ({ signupStart }) => {
     })
 
     const { displayName, email, password, confirmPassword } = user
+
+    const dispatch = useDispatch()
+    const signupStartHandler = (user) => dispatch(signupStart(user))
+
     const handleSubmit = async event => {
         event.preventDefault()
 
@@ -28,7 +32,7 @@ const SignUp = ({ signupStart }) => {
             return
         } 
 
-        signupStart({ displayName, email, password })
+        signupStartHandler({ displayName, email, password })
     }
     const handleChange = event => {
         const { name, value } = event.target
@@ -77,8 +81,4 @@ const SignUp = ({ signupStart }) => {
         )
     }
 
-const mapDispatchToProps = dispatch => ({
-    signupStart: user => dispatch(signupStart(user))
-})
-
-export default connect(null, mapDispatchToProps)(SignUp)
+export default SignUp
