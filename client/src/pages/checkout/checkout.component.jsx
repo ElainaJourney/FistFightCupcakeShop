@@ -34,7 +34,7 @@ const Checkout = () => {
         <div className='test-warning'>
             This is just a test: 4242 4242 4242 4242 - 1/22 - 123
         </div>
-        <StripeCheckoutButton price={total} />
+        <StripeCheckoutButton price={total} name={bagItems} />
     </ CheckoutContainer>
 )}
 
