@@ -2,6 +2,7 @@ import React from 'react';
 import PROMPT_DATA from './prompts.data';
 
 import CustomButton from '../../components/custom-button/custom-button.component';
+import { PromptContainer } from './prompts.styles';
 
 class ArtPrompts extends React.Component{
     constructor(props) {
@@ -13,10 +14,10 @@ class ArtPrompts extends React.Component{
     render(){
         const {options} = this.state
         return (
-        <div className='homepage'>
-            {`${options.blanks[Math.floor(Math.random()*options.blanks.length)]}`}
+        <PromptContainer>
+            <h1>{`${options.blanks[Math.floor(Math.random()*options.blanks.length)]}!`}</h1>
             <CustomButton onClick={() => window.location.reload(false)}>Let's do art!</CustomButton>
-        </div>)
+        </PromptContainer>)
     }
     
 };

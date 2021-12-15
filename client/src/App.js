@@ -11,6 +11,7 @@ import SigninAndSignupPage from "./pages/signin-and-signup/signin-and-signup.com
 import Checkout from "./pages/checkout/checkout.component";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { checkUserSession } from "./redux/user/user.actions";
+import CommissionsForm from "./pages/commissions/commissions.component";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -34,6 +35,7 @@ const App = () => {
       />
       <Route exact path="/prompts" component={ArtPrompts} />
       <Route exact path="/checkout" component={Checkout} />
+      <Route exact path="/commissions" component={CommissionsForm} />
     </div>
   );
 };
