@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 html,
 body,
 div,
@@ -125,6 +128,10 @@ table {
 
 body {
   font-family: "Open Sans Condensed";
+
+  @media screen and (max-width: 800px) {
+    
+  }
 }
 
 a {
@@ -135,3 +142,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+`;

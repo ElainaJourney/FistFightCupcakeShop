@@ -49,4 +49,19 @@ export const CollectionItemContainer = styled.div`
     &:hover {
         ${customHoverStyles}
       }
+    @media screen and (max-width: 800px) {
+        width: 40vw;
+        button {
+            display: block;
+            min-width: unset;
+        }
+        &hover {
+            ${ItemImageContainer} {
+                opacity: unset;
+            }
+            button {
+                opacity: unset;
+            }
+        }
+    }
 `

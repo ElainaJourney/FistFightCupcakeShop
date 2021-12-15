@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import { GlobalStyle } from "./global.styles";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -21,6 +21,7 @@ const App = () => {
   }, [dispatch]);
   return (
     <div className="App">
+      <GlobalStyle />
       <Header />
       <Route exact path="/" component={HomePage} />
       <Route path="/shop" component={ShopPage} />
